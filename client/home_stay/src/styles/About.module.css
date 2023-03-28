@@ -1,0 +1,55 @@
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.headings{
+  background-color: #fff389;
+  border-radius: 10px;
+  margin: 35px 0%;
+  padding: 20px 0px;
+  text-align: center;
+  font-size: 40px;
+  color: blue;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.logos{
+    position: relative;
+    top: 58px;
+    z-index: 1;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    width: 115px;
+    height: 115px;
+    object-fit: cover;
+    /* border: 1px solid ; */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .cards{
+    padding-top: 30px !important; 
+    border: 2px solid #d8d8d8 !important;
+    border-radius: 15px !important;
+  }
+
+  .cols{
+    text-align: center;
+  }
+
+  .card_header{
+    text-align: center !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+.card_text{
+  text-align: left !important;
+}
+
+.teamImage{
+width: 275px;
+border-radius: 50%;
+}
+
+.image_container{
+  text-align: center;
+}
