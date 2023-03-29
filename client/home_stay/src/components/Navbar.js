@@ -29,7 +29,11 @@ export function NavBar() {
                 <Nav.Link className="font-color">Home</Nav.Link>
               </LinkContainer>
 
-              <NavDropdown
+              <LinkContainer to="/homestays">
+                <Nav.Link className="font-color">Homestays</Nav.Link>
+              </LinkContainer>
+
+              {/* <NavDropdown
                 className="font-color"
                 title="Homestays"
                 id="navbarScrollingDropdown"
@@ -38,7 +42,7 @@ export function NavBar() {
                 <NavDropdown.Item href="#action3">Delhi</NavDropdown.Item>
                 <NavDropdown.Item href="#action3">Goa</NavDropdown.Item>
                 <NavDropdown.Item href="#action3">Kashmir</NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown> */}
 
               <LinkContainer to="/about">
                 <Nav.Link className="font-color">About</Nav.Link>

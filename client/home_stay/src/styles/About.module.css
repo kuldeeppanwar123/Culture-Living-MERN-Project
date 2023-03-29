@@ -51,5 +51,26 @@ border-radius: 50%;
 }
 
 .image_container{
+  margin: auto;
   text-align: center;
+  /* border: 1px solid red; */
+  /* margin-top: 65px !important; */
+}
+
+.image_text{
+  margin: auto !important;
+  border: 2px solid #bfbbbb;
+  border-radius: 20px;
+  /* background-color: rgb(118, 247, 118); */
+  padding: 40px !important;
+  /* margin-bottom: 45px !important; */
+}
+
+.image_container>p{
+  /* font-weight: 400px !important; */
+ border: 2px solid red !important;
+}
+
+#temp{
+  margin-bottom:65px !important
 }

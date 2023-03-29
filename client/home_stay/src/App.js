@@ -32,6 +32,7 @@ import { NavBar } from "./components/Navbar";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import About from "./components/About.js";
 import Aboutus from "./components/Aboutus";
+import Homestays from "./components/Homestays";
 export default function App() {
   return (
     <>
@@ -41,7 +42,7 @@ export default function App() {
        <Route path="/" element={<Home/>}/>
        <Route path="/about" element={<About/>} />
        <Route path="/contact" element={<Aboutus/>}  />
-       <Route path=""  />
+       <Route path="/homestays" element={<Homestays/>} />
      </Routes >
      <Footer/>
     </BrowserRouter>    

@@ -145,20 +145,15 @@ export default function About() {
             <img src={kuldeep} alt=" " className={styles.teamImage} />
           </Col>
           <Col md="12" lg="8" className={styles.image_text}>
-            <p style={{marginTop:"45px"}}>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem
-              natus consequatur aspernatur facere quo earum similique, illum
-              odit recusandae aliquam, inventore aut. Excepturi, facilis.
-              Possimus saepe error sequi fugit? Eligendi dignissimos odit, unde,
-              laborum inventore similique illum alias corporis vero voluptatem,
-              neque impedit temporibus itaque labore cum delectus eaque
-              nesciunt. Beatae quia architecto cupiditate qui?
+            {/* <h4 style={{textAlign:"center"}}><strong>"Kuldeep Panwar"</strong></h4> */}
+            <p >
+            I <strong>Kuldeep Panwar</strong> student of Acropolis intitute of Technology and Research Indore pursuing B. Tech in computer science and information techonology. I am a MERN stack entusiast and always eager to learn new skills. i am working hard in this project and my role is to develop backend api's for the project and also take care of the front-end connectivity with the api.
             </p>
           </Col>
           {width >= 992 ? (
             <>
               <Col md="12" lg="8" className={styles.image_text}>
-                <p style={{marginTop:"45px"}}>
+                <p>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem
                   natus consequatur aspernatur facere quo earum similique, illum
                   odit recusandae aliquam, inventore aut. Excepturi, facilis.
@@ -175,11 +170,11 @@ export default function About() {
             </>
           ) : (
             <>
-              <Col md="12" lg="4" className={styles.image_container}>
+              <Col md="12" lg="4" style={{marginTop:"65px"}} className={styles.image_container}>
                 <img src={kuldeep} alt=" " className={styles.teamImage} />
               </Col>
-              <Col md="12" lg="8" className={styles.image_text}>
-                <p style={{marginTop:"45px"}}>
+              <Col md="12" lg="8" style={{marginBottom:"65px !important"}} id={styles.temp} className={styles.image_text}>
+                <p >
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem
                   natus consequatur aspernatur facere quo earum similique, illum
                   odit recusandae aliquam, inventore aut. Excepturi, facilis.
@@ -196,7 +191,7 @@ export default function About() {
             <img src={kuldeep} alt=" " className={styles.teamImage} />
           </Col>
           <Col md="12" lg="8" className={styles.image_text}>
-            <p style={{marginTop:"45px"}}>
+            <p >
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem
               natus consequatur aspernatur facere quo earum similique, illum
               odit recusandae aliquam, inventore aut. Excepturi, facilis.
