@@ -9,3 +9,18 @@
     color: blue;
     font-family: 'Poppins', sans-serif !important;
   }
+
+  .cols{
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .cards{
+      margin: auto !important;
+    }
+    
+    .cards:hover{
+        position: relative;
+        bottom: 10px;
+        box-shadow: 2px 2px 5px 2px rgb(164, 162, 162),-2px -2px 5px 2px rgb(164, 162, 162);
+  }

@@ -11,11 +11,10 @@ import kuldeep from "../assets/Team/kuldeep.jpg";
 
 export default function About() {
   const [width,setWidth] = useState(window.innerWidth);
-  
   const detectWidth=()=>{
     setWidth(window.innerWidth);
   }
-
+ 
   useEffect(()=>{
     window.addEventListener('resize',detectWidth);
     return()=>{

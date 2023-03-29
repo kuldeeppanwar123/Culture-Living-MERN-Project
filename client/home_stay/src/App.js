@@ -33,6 +33,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import About from "./components/About.js";
 import Aboutus from "./components/Aboutus";
 import Homestays from "./components/Homestays";
+import SingleHomestay from "./components/SingleHomestay";
 export default function App() {
   return (
     <>
@@ -43,6 +44,7 @@ export default function App() {
        <Route path="/about" element={<About/>} />
        <Route path="/contact" element={<Aboutus/>}  />
        <Route path="/homestays" element={<Homestays/>} />
+       <Route path="/singlehomestay" element={<SingleHomestay/>} />
      </Routes >
      <Footer/>
     </BrowserRouter>    

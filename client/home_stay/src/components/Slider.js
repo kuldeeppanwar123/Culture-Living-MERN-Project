@@ -57,8 +57,6 @@ const sliderStyle = {
             alt="Third slide"
           />      
         </Carousel.Item>
-
-        
       </Carousel>
     </>
   );
