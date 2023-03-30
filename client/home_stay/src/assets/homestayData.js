@@ -55,7 +55,7 @@ const homestays = [
 
     {
         about: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero iste modi praesentium voluptate optio sint, alias magnam temporibus amet similique?",
-        images: [ img4,img3,img1 ,img2,img5,img6],
+        images: [ img6,img3,img1 ,img2,img5,img4],
         location:"231 rani bhag, vijay nagar, indore MP",
         rooms:8,
         capacity:14,
