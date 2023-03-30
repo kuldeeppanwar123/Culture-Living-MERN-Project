@@ -59,8 +59,9 @@ export function NavBar() {
               title="Login/Signup"
               id="navbarScrollingDropdown"
             >
-             <LinkContainer to="/hostlogin"><NavDropdown.Item style={{backgroundColor:"purple"}} >Host</NavDropdown.Item></LinkContainer>
-              <NavDropdown.Item href="/guestlogin">Guest</NavDropdown.Item>
+             <LinkContainer to="/hostlogin"><NavDropdown.Item  >Host</NavDropdown.Item></LinkContainer>
+             <LinkContainer to="/guestlogin"><NavDropdown.Item >Guest</NavDropdown.Item></LinkContainer>
+             
             </NavDropdown>
           </Navbar.Collapse>
         </Container>
