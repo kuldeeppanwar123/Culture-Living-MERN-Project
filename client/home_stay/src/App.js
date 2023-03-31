@@ -31,7 +31,7 @@ import Home from "./components/Home";
 import { NavBar } from "./components/Navbar";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import About from "./components/About.js";
-import Aboutus from "./components/Aboutus";
+// import Aboutus from "./components/Aboutus";
 import Homestays from "./components/Homestays";
 import SingleHomestay from "./components/SingleHomestay";
 import Error from "./components/Error";
@@ -45,7 +45,7 @@ export default function App() {
      <Routes>
        <Route path="/" element={<Home/>}/>
        <Route path="/about" element={<About/>} />
-       <Route path="/contact" element={<Aboutus/>}  />
+       {/* <Route path="/contact" element={<Aboutus/>}  /> */}
        <Route path="/homestays" element={<Homestays/>} />
        <Route path="/singlehomestay" element={<SingleHomestay/>} />
        <Route path="/hostlogin" element={<HostLogin/>} />
