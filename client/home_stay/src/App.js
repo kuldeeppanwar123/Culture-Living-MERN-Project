@@ -37,6 +37,8 @@ import SingleHomestay from "./components/SingleHomestay";
 import Error from "./components/Error";
 import HostLogin from "./components/HostLogin";
 import HostSignup from "./components/HostSignup";
+import GuestSignup from "./components/GuestSignup";
+import GuestLogin from "./components/GuestLogin";
 export default function App() {
   return (
     <>
@@ -50,6 +52,8 @@ export default function App() {
        <Route path="/singlehomestay" element={<SingleHomestay/>} />
        <Route path="/hostlogin" element={<HostLogin/>} />
        <Route path="/hostsignup" element={<HostSignup/>} />
+       <Route path="/guestlogin" element={<GuestLogin/>} />
+       <Route path="/guestsignup" element={<GuestSignup/>} />
        <Route path="*" element={<Error/>} />
      </Routes >
      <Footer/>

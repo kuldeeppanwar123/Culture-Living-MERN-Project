@@ -4,7 +4,7 @@ import React from "react";
 import styles from "../styles/HostLogin.module.css";
 import { useFormik } from "formik";
 import{Link} from 'react-router-dom'
-export default function HostLogin() {
+export default function GuestLogin() {
   const formik = useFormik({
     initialValues: { email: "", password: "" },
     validate: "",
@@ -18,7 +18,7 @@ export default function HostLogin() {
   return (
     <div style={{ marginTop: "120px" }}>
       <div className={`${styles.container}`}>
-        <h5 className={styles.heading}>Host Login</h5>
+        <h5 className={styles.heading}>Guest Login</h5>
         {/* <h2>hyy</h2> */}
       <form onSubmit={formik.handleSubmit}>
         <input
@@ -41,7 +41,7 @@ export default function HostLogin() {
         <button className={styles.btn}>Login</button>
       </form>
       <div className={styles.line}><span> or </span></div>
-      <div className={styles.link}>Don't have an Account? <Link to="/hostsignup">signup</Link></div>
+      <div className={styles.link}>Don't have an Account? <Link to="/guestsignup">signup</Link></div>
       </div>
     </div>
 

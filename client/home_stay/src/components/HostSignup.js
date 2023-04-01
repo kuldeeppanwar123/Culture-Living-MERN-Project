@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import s from '../styles/HostSignup.module.css';
 import convertToBase64 from '../helper/convert';
 import{Row , Col} from 'react-bootstrap'
+import { saveHost } from '../services/homestayService';
 export default function HostSignup() {
     const [file, setfile] = useState([]);
     const[facilities,setFacilities]=useState([]);
@@ -11,7 +12,7 @@ export default function HostSignup() {
         initialValues: {
             firstname: '',
             lastname: '',
-            phonenumber: '',
+            phone: '',
             email: '',
             address: '',
             streetaddress: '',
@@ -34,9 +35,11 @@ export default function HostSignup() {
             const t =  await convertToBase64(file[i]);
             temp.push(t);
             }
-            value = await Object.assign(value, { profile: temp || '' });
+            value = await Object.assign(value, { images: temp || '' });
             value = await Object.assign(value, { facility: facilities || '' });
             console.log(value);
+            const response = await saveHost(value);
+            console.log(response);
         }
     })
 
@@ -53,7 +56,7 @@ export default function HostSignup() {
         else{
             setFacilities(facilities.filter((itm)=>{return itm!==value}))
         }
-        console.log(facilities);
+        // console.log(facilities);
      }
     return (
         <div className={s.hostsignup}>
@@ -87,7 +90,7 @@ export default function HostSignup() {
                     </div> */}
                     <div className="col-md-6">
                         <label htmlFor="validationDefault02" className="form-label">Phone Number</label>
-                        <input {...formik.getFieldProps('phonenumber')} type="text" className= {`form-control ${s.input}`} id="validationDefault02" required />
+                        <input {...formik.getFieldProps('phone')} type="text" className= {`form-control ${s.input}`} id="validationDefault02" required />
                     </div>
 
                     <div className={s.line}><span> Location </span></div>
