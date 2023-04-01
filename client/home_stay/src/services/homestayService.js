@@ -7,3 +7,7 @@ export async function saveHost(hostData){
 export async function saveGuest(guestdata){
     return await axios.post("http://localhost:4500/guestsignup",guestdata);
 }
+
+export async function getHomestays(){
+    return await axios.get("http://localhost:4500/homestays");
+}

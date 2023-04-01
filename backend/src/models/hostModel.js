@@ -13,6 +13,10 @@ const HostSchema = mongoose.Schema({
         required:true,
         unique:true
     },
+    homestaytitle:{
+        type:String,
+        required:true
+    },
     phone: {
         type: String,
         required: true,
@@ -57,6 +61,14 @@ const HostSchema = mongoose.Schema({
     capacity: {
         type: String,
         required: true
+    },
+    meal:{
+        type:String,
+        required:true
+    },
+    abouthomestay:{
+        type:String,
+        required:true
     },
     termandcondition: {
         type: String,

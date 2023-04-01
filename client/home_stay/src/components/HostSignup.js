@@ -14,17 +14,20 @@ export default function HostSignup() {
             lastname: '',
             phone: '',
             email: '',
+            homestaytitle:'',
             address: '',
             streetaddress: '',
             city: '',
             state: '',
             zipcode: '',
             country: '',
+            meal:'',
             price: {single:'',double:'',extra:''},
             hosttime: '',
             ishosted: '',
             rooms: '',
             capacity: '',
+            abouthomestay:'',
             termandcondition: ''
         },
         validateOnBlur: false,
@@ -95,6 +98,10 @@ export default function HostSignup() {
 
                     <div className={s.line}><span> Location </span></div>
                     <div className="col-12">
+                        <label htmlFor="title" className="form-label">Homstay Title</label>
+                        <input {...formik.getFieldProps('homestaytitle')} type="text" className={`form-control ${s.input}`} id="title" placeholder="" required />
+                    </div>
+                    <div className="col-12">
                         <label htmlFor="inputAddress" className="form-label">Address</label>
                         <input {...formik.getFieldProps('address')} type="text" className={`form-control ${s.input}`} id="inputAddress" placeholder="" required />
                     </div>
@@ -139,6 +146,10 @@ export default function HostSignup() {
                     <div className="col-7">
                         <label htmlFor="" className="form-label">Capacity of Rooms?</label>
                         <input {...formik.getFieldProps('capacity')} type="text" className={`form-control ${s.input}`} required />
+                    </div>
+                    <div className="col-12">
+                        <label htmlFor="" className="form-label"> <h5 style={{marginBottom:"-7px"}}>Meal :</h5> </label>
+                        <textarea {...formik.getFieldProps('meal')} className={`form-control ${s.input}`} id="exampleFormControlTextarea1" rows="5" required></textarea>
                     </div>
                     <div className="col-12">
                         <h5>Tariff:</h5>
@@ -277,8 +288,12 @@ export default function HostSignup() {
                         <input onChange={onupload} className={`form-control ${s.input}`} type="file" id="formFileMultiple" multiple required />
                     </div>
                     <div className="col-12">
-                        <label htmlFor="" className="form-label">Write Terms and Conditions</label>
+                        <label htmlFor="exampleFormControlTextarea1" className="form-label">Write Terms and Conditions</label>
                         <textarea {...formik.getFieldProps('termandcondition')} className={`form-control ${s.input}`} id="exampleFormControlTextarea1" rows="5" required></textarea>
+                    </div>
+                    <div className="col-12">
+                        <label htmlFor="about" className="form-label">Write About Homestay</label>
+                        <textarea {...formik.getFieldProps('abouthomestay')} className={`form-control ${s.input}`} id="about" rows="7" required></textarea>
                     </div>
                     <div className="col-12 d-flex justify-content-center">
                         <button type="submit" className="btn btn-primary rounded">Submit</button>

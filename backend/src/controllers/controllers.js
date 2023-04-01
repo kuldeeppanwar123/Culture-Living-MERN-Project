@@ -7,9 +7,18 @@ export async function HostSignup(req,res){
         console.log(req.body);
         const hostdata = new HostSignupModel(req.body);
         const savedHost = await hostdata.save();
-        res.status(StatusCodes.OK).json(savedHost);  
+        res.status(StatusCodes.CREATED).json(savedHost);  
     } catch (error) {
         console.log(error);
+    }
+}
+
+export async function getHomestays(req,res){
+    try {
+       const homestays = await HostSignupModel.find();
+       res.status(StatusCodes.OK).json(homestays);
+    } catch (error) {
+        
     }
 }
 
