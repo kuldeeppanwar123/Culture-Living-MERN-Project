@@ -2,13 +2,31 @@ import React, { useState } from "react";
 import { Carousel, Col, Container, Row } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import styles from "../styles/SingleHomestay.module.css";
+import { Toaster, toast } from "react-hot-toast";
 
 export default function SingleHomestay() {
   const locationObj = useLocation();
   const homestay = useState(locationObj.state);
   console.log(homestay[0]);
+
+  const handlebook = async function(){
+    let responsePromise =  new Promise(function(resolve ,reject){
+      setTimeout(() => {
+        resolve("hyy");
+      }, 3000);
+    })
+
+    toast.promise(responsePromise,{
+      loading:'Booking..',
+      success: <b>Booked Successfully</b>,
+      error: <b>Couldn't Booked</b>
+    })
+  }
+
+
   return (
     <Container style={{ marginTop: "120px" }}>
+    <Toaster position="top-center" reverseOrder={false}/>
       <h2 className={styles.headings}>{homestay[0].homestaytitle}</h2>
       <Container>
         <Row >
@@ -114,6 +132,9 @@ export default function SingleHomestay() {
 {/*       
       <h3>{homestay[0].price["single"]}</h3>
       <h3>{homestay[0].location}</h3> */}
+    <div className="col-12 d-flex justify-content-center">
+      <button type="submit"onClick={handlebook} className="btn btn-primary rounded">Book Homestay</button>
+    </div>
     </Container>
   );
 }

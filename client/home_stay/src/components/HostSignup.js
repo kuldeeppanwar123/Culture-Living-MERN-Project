@@ -4,6 +4,10 @@ import s from '../styles/HostSignup.module.css';
 import convertToBase64 from '../helper/convert';
 import{Row , Col} from 'react-bootstrap'
 import { saveHost } from '../services/homestayService';
+import {toast,Toaster} from 'react-hot-toast';
+
+
+
 export default function HostSignup() {
     const [file, setfile] = useState([]);
     const[facilities,setFacilities]=useState([]);
@@ -41,8 +45,13 @@ export default function HostSignup() {
             value = await Object.assign(value, { images: temp || '' });
             value = await Object.assign(value, { facility: facilities || '' });
             console.log(value);
-            const response = await saveHost(value);
+            const response =  saveHost(value);
             console.log(response);
+            toast.promise(response,{
+                loading:"Creating...",
+                success:<b>Registered Successfully</b>,
+                error:<b>Couldn't Register</b>
+            })
         }
     })
 
@@ -63,6 +72,7 @@ export default function HostSignup() {
      }
     return (
         <div className={s.hostsignup}>
+            <Toaster position='top-center' reverseOrder={false}/>
             <section className={`container my-2  w-50 text-dark p-2 ${s.container}`} style={{}}>
                 <form onSubmit={formik.handleSubmit} className="row g-3 p-3" >
                     <h5 className={s.heading}>Signup</h5>
@@ -303,3 +313,6 @@ export default function HostSignup() {
         </div>
     );
 }
+
+
+

@@ -2,6 +2,7 @@ import { useFormik } from 'formik';
 // import React, { useState } from 'react';
 import s from '../styles/HostSignup.module.css';
 import { saveGuest } from '../services/homestayService';
+import { Toaster, toast } from 'react-hot-toast';
 
 export default function GuestSignup() {
    
@@ -21,13 +22,19 @@ export default function GuestSignup() {
         validateOnChange: false,
         onSubmit: async function (value) {
             console.log(value);
-            const response = await saveGuest(value);
+            const response =  saveGuest(value);
             console.log(response);
+            toast.promise(response , {
+                loading:"Creating..",
+                success: <b>Registered Successfully</b>,
+                error: <b>Couldn't Registered</b>
+            })
         }
     })
 
     return (
         <div className={s.hostsignup}>
+            <Toaster position='top-center' reverseOrder={false}/>
             <section className={`container my-2  w-50 text-dark p-2 ${s.container}`} style={{}}>
                 <form onSubmit={formik.handleSubmit} className="row g-3 p-3" >
                     <h5 className={s.heading}>Signup</h5>
