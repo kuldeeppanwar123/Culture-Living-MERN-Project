@@ -8,6 +8,10 @@ export async function saveGuest(guestdata){
     return await axios.post("http://localhost:4500/guestsignup",guestdata);
 }
 
+export async function loginGuest(guestdata){
+    return await axios.post("http://localhost:4500/guestlogin",guestdata);
+}
 export async function getHomestays(){
-    return await axios.get("http://localhost:4500/homestays");
+    const token = await localStorage.getItem("token");
+    return await axios.get("http://localhost:4500/homestays",{headers:{"Authorization":`Bearer ${token}`}});
 }

@@ -4,6 +4,7 @@ import styles from "../styles/Homestays.module.css";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { getHomestays } from "../services/homestayService";
+import { Toaster, toast } from "react-hot-toast";
 export default function Homestays() {
   const [homestay, setHomestay] = useState([]);
   const navigate = useNavigate();
@@ -13,17 +14,34 @@ export default function Homestays() {
   }
 
   const fetchHomestay = async() => {
-    const homedata =  await getHomestays();
-    console.log(homedata.data);
-    setHomestay(homedata.data);
+   
+    try {
+      const homedata =  await getHomestays();
+      console.log(homedata.data);
+      setHomestay(homedata.data);
+
+    } catch (error) {
+      toast.error("Login is needed!",{
+        position:'top-center'
+      });
+      setTimeout(() => {
+        navigate('/guestlogin');
+      },1000);
+      return;
+      // console.log("inside catch block");
+      // console.log(error.response.data);
+      // console.log(error.response.status);
+    }
+
   };
 
   useEffect(()=>{
     fetchHomestay();
-  },[]);
+  });
 
   return (
     <div>
+      <Toaster position='top-center' reverseOrder={false}/>
       <h2 className={styles.headings}>Homestays</h2>
       <Container>
         <Row >

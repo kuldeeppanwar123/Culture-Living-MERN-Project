@@ -18,6 +18,7 @@ export default function HostSignup() {
             lastname: '',
             phone: '',
             email: '',
+            password:'',
             homestaytitle:'',
             address: '',
             streetaddress: '',
@@ -89,6 +90,10 @@ export default function HostSignup() {
                         <label htmlFor="inputEmail4" className="form-label">Email</label>
                         <input {...formik.getFieldProps('email')} type="email" className={`form-control ${s.input}`} id="inputEmail4" required />
                     </div>
+                    <div className="col-md-6">
+                        <label htmlFor="" className="form-label">Password</label>
+                        <input {...formik.getFieldProps('password')} type="password" className={`form-control ${s.input}`} placeholder='Password' required />
+                    </div>
                     {/* <div className="col-md-6">
                         <label htmlFor="inputPassword4" className="form-label">Gender</label>
                         <select {...formik.getFieldProps('gender')} id="inputState" className="form-select" style={{marginTop: "22px"}} required>
@@ -101,7 +106,7 @@ export default function HostSignup() {
                         <label htmlFor="validationDefault01" className="form-label">Date Of Birth</label>
                         <input {...formik.getFieldProps('dob')} type="date" className="form-control" id="validationDefault01" required />
                     </div> */}
-                    <div className="col-md-6">
+                    <div className="col-md-12">
                         <label htmlFor="validationDefault02" className="form-label">Phone Number</label>
                         <input {...formik.getFieldProps('phone')} type="text" className= {`form-control ${s.input}`} id="validationDefault02" required />
                     </div>

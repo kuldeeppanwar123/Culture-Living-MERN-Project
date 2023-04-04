@@ -3,8 +3,12 @@ import React from "react";
 // import { Col, Container, Row } from 'react-bootstrap'
 import styles from "../styles/HostLogin.module.css";
 import { useFormik } from "formik";
-import{Link} from 'react-router-dom'
+import{Link, useNavigate} from 'react-router-dom'
+import { loginGuest } from "../services/homestayService.js";
+import { Toaster, toast } from "react-hot-toast";
+
 export default function GuestLogin() {
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: { email: "", password: "" },
     validate: "",
@@ -12,11 +16,28 @@ export default function GuestLogin() {
     validateOnChange: false,
     onSubmit: async function (value) {
       console.log(value);
+       let responsePromise =  loginGuest(value);
+       console.log(responsePromise);
+       toast.promise(responsePromise ,{
+        loading:"Login...",
+        success: <b>Login Successfully</b>,
+        error: <b>Wrong Email or Password</b>
+       })
+
+       responsePromise.then((res)=>{
+        setTimeout(() => {
+          let token = res.data.token;
+          localStorage.setItem('token',token);
+          // sessionStorage.setItem('token',token);
+          navigate('/homestays');   
+        }, 2000);
+       })
     },
   });
 
   return (
     <div style={{ marginTop: "120px" }}>
+      <Toaster position='top-center' reverseOrder={false}/>
       <div className={`${styles.container}`}>
         <h5 className={styles.heading}>Guest Login</h5>
         {/* <h2>hyy</h2> */}

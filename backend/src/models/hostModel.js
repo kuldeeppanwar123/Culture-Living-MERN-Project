@@ -13,6 +13,10 @@ const HostSchema = mongoose.Schema({
         required:true,
         unique:true
     },
+    password: {
+        type: String,
+        required:true,
+    },
     homestaytitle:{
         type:String,
         required:true

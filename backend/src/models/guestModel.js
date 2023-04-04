@@ -12,5 +12,5 @@ const guestSchema = mongoose.Schema({
    checkout:{type:Date,required:true}
 })
 
-const guestSignupModel = mongoose.model('guestsignup',guestSchema);
-export default guestSignupModel;
+const guestModel = mongoose.model('guestsignup',guestSchema);
+export default guestModel;
