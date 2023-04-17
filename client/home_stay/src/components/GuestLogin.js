@@ -1,4 +1,4 @@
-import React from "react";
+// import React, { useState } from "react";
 // import { Container } from 'react-bootstrap';
 // import { Col, Container, Row } from 'react-bootstrap'
 import styles from "../styles/HostLogin.module.css";
@@ -6,30 +6,38 @@ import { useFormik } from "formik";
 import{Link, useNavigate} from 'react-router-dom'
 import { loginGuest } from "../services/homestayService.js";
 import { Toaster, toast } from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { authActions } from "../store/AuthSlice";
 
 export default function GuestLogin() {
+  // const [name , setName] = useState();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const formik = useFormik({
     initialValues: { email: "", password: "" },
     validate: "",
     validateOnBlur: false,
     validateOnChange: false,
-    onSubmit: async function (value) {
-      console.log(value);
-       let responsePromise =  loginGuest(value);
-       console.log(responsePromise);
-       toast.promise(responsePromise ,{
-        loading:"Login...",
-        success: <b>Login Successfully</b>,
-        error: <b>Wrong Email or Password</b>
-       })
 
-       responsePromise.then((res)=>{
-        setTimeout(() => {
-          let token = res.data.token;
-          localStorage.setItem('token',token);
-          // sessionStorage.setItem('token',token);
-          navigate('/homestays');   
+    onSubmit: async function (value) {
+       let responsePromise =  loginGuest(value);
+       toast.promise(responsePromise ,{
+         loading:"Login...",
+         success: <b>Login Successfully</b>,
+         error: <b>Wrong Email or Password</b>
+        })
+        //  responsePromise.then(response=>{setName(response.data.name)});
+         responsePromise.then((res)=>{
+           setTimeout(() => {
+             let token = res.data.token;
+             localStorage.setItem('token',token);
+             localStorage.setItem('name',res.data.name);
+            //  console.log('name is '+res.data.name);
+            dispatch(authActions.login(res.data.name));
+            
+            navigate('/homestays');   
+            // console.log(responsePromise);
         }, 2000);
        })
     },

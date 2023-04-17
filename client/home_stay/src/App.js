@@ -25,7 +25,6 @@
 
 
 
-import React from "react";
 import { Footer } from "./components/Footer";
 import Home from "./components/Home";
 import { NavBar } from "./components/Navbar";
@@ -39,7 +38,10 @@ import HostLogin from "./components/HostLogin";
 import HostSignup from "./components/HostSignup";
 import GuestSignup from "./components/GuestSignup";
 import GuestLogin from "./components/GuestLogin";
+
+
 export default function App() {
+
   return (
     <>
     <BrowserRouter>

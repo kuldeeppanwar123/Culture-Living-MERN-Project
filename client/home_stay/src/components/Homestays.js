@@ -23,7 +23,7 @@ export default function Homestays() {
    
     try {
       const homedata =  await getHomestays();
-      console.log(homedata.data);
+      // console.log(homedata.data);
       setHomestay(homedata.data); 
       setIsLoaded(true);
 

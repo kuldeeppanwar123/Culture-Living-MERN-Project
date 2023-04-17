@@ -70,7 +70,7 @@ export async function guestLogin(req,res){
                             res.json({error:"token couldn't be created"});
                         }
                         else{
-                            res.json({message:"guest loginned successfully" ,token});
+                            res.json({message:"guest loginned successfully" ,token,name:checkGuest.firstname});
                         }
                     })
                 }
