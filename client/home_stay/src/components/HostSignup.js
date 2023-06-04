@@ -11,6 +11,7 @@ import {toast,Toaster} from 'react-hot-toast';
 export default function HostSignup() {
     const [file, setfile] = useState([]);
     const[facilities,setFacilities]=useState([]);
+  
 
     const formik = useFormik({
         initialValues: {
@@ -45,14 +46,14 @@ export default function HostSignup() {
             }
             value = await Object.assign(value, { images: temp || '' });
             value = await Object.assign(value, { facility: facilities || '' });
-            console.log(value);
+            // console.log(value);
             const response =  saveHost(value);
-            console.log(response);
+            // console.log(response);
             toast.promise(response,{
                 loading:"Creating...",
                 success:<b>Registered Successfully</b>,
                 error:<b>Couldn't Register</b>
-            })
+            });
         }
     })
 
